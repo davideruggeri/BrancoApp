@@ -2,28 +2,49 @@
   "expo": {
     "name": "brancoApp",
     "slug": "brancoApp",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/nuova-icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "platforms": ["ios", "android", "web"],
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/nuova-splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
     },
     "ios": {
       "supportsTablet": true
     },
     "android": {
+      "package": "com.branco.brancoapp",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/nuova-adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "versionCode": 2
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "pwa": {
+        "name": "brancoApp",
+        "short_name": "branco",
+        "description": "App Branco",
+        "background_color": "#ffffff",
+        "theme_color": "#ffffff"
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ddc4f297-6599-499f-a558-e3dd357abcd5"
+      }
     }
   }
 }

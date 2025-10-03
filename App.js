@@ -1,20 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { NavigationContainer, StackRouter } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+// Import delle schermate
+import HomeScreen from "./screens/HomeScreen";
+import CalendarScreen from "./screens/CalendarScreen";
+import IndirizzarioScreen from "./screens/IndirizzarioScreen"; 
+import QuoteScreen from "./screens/QuoteScreen";
+import PersonDetailScreen from "./screens/PersonDetailScreen";
+import PresenzeScreem from "./screens/PresenzeScreen";
+import SpeseScreen from "./screens/SpeseScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Calendario" component={CalendarScreen} />
+        <Stack.Screen name="Indirizzario" component={IndirizzarioScreen} />
+        <Stack.Screen name="Quote" component={QuoteScreen} />
+        <Stack.Screen name="PersonDetail" component={PersonDetailScreen} options={{title: "Dettaglio Persona"}} />
+        <Stack.Screen name="Presenze" component={PresenzeScreem} />
+        <Stack.Screen name="Spese" component={SpeseScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

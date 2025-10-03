@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "700909183063",
+    "project_id": "brancoapp",
+    "storage_bucket": "brancoapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:700909183063:android:e105a412760c886db54312",
+        "android_client_info": {
+          "package_name": "com.branco.brancoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "700909183063-fi0v8gcte3apsatdb2dvip6joqp2dvqa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3wPP5pTyFq32fkf21K2OC1FevEFPm328"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "700909183063-fi0v8gcte3apsatdb2dvip6joqp2dvqa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
