@@ -11,23 +11,17 @@ const features = [
 ];
 
 const { width } = Dimensions.get("window");
-const itemWidth = width - 40; // margine laterale 20px per lato
+const itemWidth = width - 40;
 
 function FeatureCard({ item, navigation }) {
   const scale = new Animated.Value(1);
 
   const onPressIn = () => {
-    Animated.spring(scale, {
-      toValue: 0.97,
-      useNativeDriver: true,
-    }).start();
+    Animated.spring(scale, { toValue: 0.97, useNativeDriver: true }).start();
   };
 
   const onPressOut = () => {
-    Animated.spring(scale, {
-      toValue: 1,
-      useNativeDriver: true,
-    }).start();
+    Animated.spring(scale, { toValue: 1, useNativeDriver: true }).start();
   };
 
   return (
@@ -38,10 +32,7 @@ function FeatureCard({ item, navigation }) {
       style={{ marginVertical: 10 }}
     >
       <Animated.View
-        style={[
-          styles.card,
-          { width: itemWidth, backgroundColor: item.color, transform: [{ scale }] },
-        ]}
+        style={[styles.card, { width: itemWidth, backgroundColor: item.color, transform: [{ scale }] }]}
       >
         {item.icon}
         <Text style={styles.cardText}>{item.title}</Text>
@@ -57,8 +48,13 @@ export default function HomeScreen({ navigation }) {
       style={styles.background}
       resizeMode="cover"
     >
-      <View style={styles.overlay}>
+      {/* Header con titolo */}
+      <View style={styles.header}>
         <Text style={styles.appTitle}>BrancoApp</Text>
+      </View>
+
+      {/* Overlay con lista */}
+      <View style={styles.overlay}>
         <FlatList
           data={features}
           renderItem={({ item }) => <FeatureCard item={item} navigation={navigation} />}
@@ -75,16 +71,23 @@ const styles = StyleSheet.create({
   overlay: {
     flex: 1,
     backgroundColor: "rgba(0,0,0,0.5)",
+    paddingTop: 120,
+    paddingHorizontal: 20,
+  },
+  header: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    right: 20,
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    paddingVertical: 50,
+    zIndex: 10,
   },
   appTitle: {
     fontSize: 32,
     fontWeight: "bold",
     color: "#fff",
-    marginBottom: 30,
-    textAlign: "center",
     textShadowColor: "rgba(0,0,0,0.6)",
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 3,

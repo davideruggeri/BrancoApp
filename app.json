@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "brancoApp",
+    "name": "BrancoApp",
     "slug": "brancoApp",
     "version": "1.0.1",
     "orientation": "portrait",
@@ -34,7 +34,7 @@
     "web": {
       "favicon": "./assets/favicon.png",
       "pwa": {
-        "name": "brancoApp",
+        "name": "BrancoApp",
         "short_name": "branco",
         "description": "App Branco",
         "background_color": "#ffffff",
